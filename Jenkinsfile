@@ -5,19 +5,21 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo 'Building the application...'
+                sh 'docker build -t jenkins-cicd:latest .'
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Testing the application...'
+                sh 'docker images jenkins-cicd:latest'
             }
         }
 
         stage('Deploy') {
             steps {
-                echo 'Deploying the application...'
+                sh 'docker stop jenkins-cicd-app || true'
+                sh 'docker rm jenkins-cicd-app || true'
+                sh 'docker run -d --name jenkins-cicd-app -p 8081:80 jenkins-cicd:latest'
             }
         }
     }
