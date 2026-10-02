@@ -38,6 +38,17 @@ the main aim of this task is to create a simple Jenkins pipeline that can automa
 
  I learned the basics of Jenkins CI/CD pipelines, Docker, and how Jenkins can be used to automate the build, testing, and deployment process.
 
+## Pipeline Result
+
+The Jenkins pipeline was successfully executed with the following stages:
+
+- Build - Docker image was successfully created.
+- Test - Docker image was verified.
+- Deploy - Application was successfully deployed in a Docker container.
+
+The pipeline completed with **SUCCESS** status.
+ 
+
 
 
 
